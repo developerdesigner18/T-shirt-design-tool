@@ -1,0 +1,21 @@
+<div class="main">
+  <!-- <input type="color" (input)="changeTshirtColor($event)" /> -->
+  <div class="actions">
+    <input type="file" (change)="uploadImage($event)" />
+    <button (click)="addText()">Add Text</button>
+   <label>Change text color:</label> <input type="color" [(ngModel)]="textColor" (input)="changeTextColor()" />
+    <button (click)="previewTshirt()">Preview</button>
+  </div>
+  <div>
+    <canvas #canvas></canvas>
+    <p class="color">
+      <span
+        class="color"
+        *ngFor="let data of t_shirt"
+        [style.background]="data.color"
+        (click)="changeColor(data)"
+      ></span>
+    </p>
+  </div>
+  <img [src]="previewImageUrl" *ngIf="showPreview" />
+</div>

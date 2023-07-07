@@ -1,0 +1,47 @@
+// #imageContainer {
+//   position: relative;
+// }
+
+// #staticTshirt {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+
+// #canvas {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.actions button {
+  background: #ededed;
+  border: 1px solid #c1c1c1;
+  padding: 13px 0px;
+  width: 37%;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+.color {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.color span {
+  height: 10px;
+  display: block;
+  width: 23px;
+  cursor: pointer;
+}

@@ -1,0 +1,62 @@
+<p>third works!</p>
+
+<div style="display: flex; gap: 5rem">
+  <div style="position: relative">
+    <img src="../../assets/white_t-shirt.png" />
+    <canvas id="canvas" #canvasEl></canvas>
+  </div>
+  <div class="action">
+    <input type="file" (change)="handleUserImageUpload($event)" />
+    <div class="text">
+      <input
+        type="text"
+        [(ngModel)]="text"
+        placeholder="Enter text"
+        (keyup.enter)="addText()"
+      />
+      <button (click)="addText()">Add Text</button>
+    </div>
+
+    <input type="color" [(ngModel)]="textColor" (input)="changeTextColor()" />
+    <div>
+      <label>Font Size: </label>
+      <input
+        type="number"
+        [(ngModel)]="textFontSize"
+        (input)="changeTextFontSize()"
+      />
+    </div>
+    <div>
+      <label>Font Family: </label>
+      <select [(ngModel)]="textFontFamily" (input)="changeTextFontFamily()">
+        <option value="Arial">Arial</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Palatino">Palatino</option>
+        <option value="Garamond">Garamond</option>
+        <option value="Comic Sans MS">Comic Sans MS</option>
+        <option value="Impact">Impact</option>
+        <option value="Arial Black">Arial Black</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Trebuchet MS">Trebuchet MS</option>
+        <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+        <option value="Lucida Console">Lucida Console</option>
+        <option value="Geneva">Geneva</option>
+        <option value="Courier">Courier</option>
+        <option value="Monaco">Monaco</option>
+      </select>
+    </div>
+
+    <button (click)="previewDesign()">Preview</button>
+  </div>
+  <div *ngIf="showPreview">
+    <h2>T-Shirt Preview</h2>
+    <div style="position: relative; display: inline-block">
+      <img src="../../assets/white_t-shirt.png" />
+      <img [src]="previewImageUrl" class="preview" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<div #canvasContainer id="canvasContainer" class="canvas-container">
+  <canvas id="canvas"></canvas>
+</div>
+<input type="color" [(ngModel)]="tshirtColor" (input)="updateTshirtColor()" />
+<input type="file" accept="image/*" (change)="handleImageUpload($event)">
